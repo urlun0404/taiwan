@@ -1,0 +1,95 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Noto Sans TC", sans-serif;
+}
+
+header {
+  background-color: #c4c4c4;
+  width: 100%;
+  padding: 1rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+}
+
+.header-title {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.header-subtitle {
+  font-size: 1rem;
+}
+
+nav {
+  background-color: #3c3535;
+  /* color: white; */ /* no effect: cuz' default styling > inherited */
+}
+
+nav ul {
+  display: flex;
+  padding-left: 1rem;
+  list-style-type: none;
+}
+
+nav ul li {
+  /* padding: 0.5rem 0.75rem;*/ /* 連結只會顯示在a文字 */
+  display: flex;
+  font-size: 1.05rem;
+}
+
+nav ul li a {
+  padding: 0.5rem 1rem;
+  color: rgb(151, 151, 151);
+  text-decoration: none;
+  font-weight: lighter;
+  transition: all 0.2s ease-in;
+}
+
+nav ul li a:hover {
+  background-color: white;
+  color: rgb(80, 78, 78);
+  font-weight: bolder;
+}
+
+nav ul li .twicon-nav {
+  font-size: 1.5rem;
+}
+
+main {
+  width: 100%;
+  display: flex;
+}
+
+section.left,
+section.right {
+  padding: 1.5rem;
+}
+
+section.right h4 {
+  font-size: 1.25rem;
+  font-weight: bolder;
+  text-align: center;
+}
+
+section.right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+section.right p {
+  margin: 1rem 0;
+}
+
+.active {
+  color: white;
+}
