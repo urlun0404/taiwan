@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300&family=Roboto:wght@300&display=swap");
+
 * {
   padding: 0;
   margin: 0;
@@ -164,6 +166,7 @@ main h2 {
 
 #home section.left article h4 {
   font-size: 1.25rem;
+  font-weight: bold;
   margin: 2rem 0 0.5rem 0;
   color: #007e81;
 }
@@ -239,6 +242,7 @@ main.drama {
 .card img {
   width: 120px;
   min-height: 180px;
+  height: 180px;
   object-fit: cover;
 }
 
@@ -280,6 +284,11 @@ main.drama {
     flex-direction: column-reverse;
     justify-content: start;
     align-items: center;
+  }
+
+  #home section.left h3,
+  h4 {
+    text-align: center;
   }
 
   #home section.left article {
