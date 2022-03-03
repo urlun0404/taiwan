@@ -234,14 +234,12 @@ main.drama {
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* filter: brightness(1) contrast(1.2); */
-  opacity: 0.9;
 }
 
 .card img {
   width: 120px;
   min-height: 180px;
-  object-fit: contain;
+  object-fit: cover;
 }
 
 .card h4 {
@@ -263,6 +261,7 @@ main.drama {
   -webkit-line-clamp: 5;
   -webkit-box-orient: vertical;
   overflow: hidden;
+  object-position: center;
 }
 
 /* rwd setting */
