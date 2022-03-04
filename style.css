@@ -26,7 +26,7 @@
 
 body {
   overflow: hidden;
-  height: fit-content;
+  /* height: fit-content; */
   background-color: #2a2a2a;
 }
 
@@ -91,9 +91,15 @@ header img {
   text-indent: 2rem;
 }
 
+/* navigation bar */
 nav {
   background-color: rgba(0, 0, 0, 0.9);
   width: 100%;
+}
+
+#burger-toggler,
+nav h2 {
+  display: none;
 }
 
 nav ul {
@@ -110,10 +116,9 @@ nav ul li {
 }
 
 nav ul li a {
+  width: 100%;
   padding: 0.5rem 1rem;
   color: rgb(151, 151, 151);
-  text-decoration: none;
-  font-weight: lighter;
   transition: all 0.2s ease-in;
 }
 
@@ -134,9 +139,9 @@ nav ul li .twicon-nav {
 main {
   width: 100%;
   height: 70vh;
-  display: flex;
   padding: 1.75rem 1rem;
   color: rgba(255, 255, 255, 1);
+  display: flex;
 }
 
 main h2 {
@@ -146,10 +151,14 @@ main h2 {
 }
 
 /* homepage */
+.section-outter {
+  display: flex;
+}
+
 #home h3 {
   font-size: 1.5rem;
   font-weight: bold;
-  margin-bottom: 0.5rem;
+  margin: 0.75rem 0 0.5rem 0;
   color: rgb(255, 255, 255, 1);
 }
 
@@ -167,8 +176,15 @@ main h2 {
 #home section.left article h4 {
   font-size: 1.25rem;
   font-weight: bold;
-  margin: 2rem 0 0.5rem 0;
   color: #007e81;
+}
+
+#home section.left article h4:first-child {
+  margin: 0.5rem 0 0.5rem 0;
+}
+
+#home section.left article h4:not(:first-child) {
+  margin: 2rem 0 0.5rem 0;
 }
 
 #home section.right {
@@ -178,16 +194,13 @@ main h2 {
   flex-direction: column;
   align-items: center;
   padding: 0 1rem;
-}
-
-#home section.right h4 {
-  font-size: 1.25rem;
-  font-weight: bold;
-  text-align: center;
+  height: 100%;
+  text-align: justify;
 }
 
 #home section.right p {
-  margin: 1.5rem 0;
+  margin: 0.75rem 0;
+  font-size: 0.85rem;
 }
 
 #home section.right iframe {
@@ -196,7 +209,7 @@ main h2 {
 }
 
 /* drama page */
-main.drama {
+.drama {
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -270,20 +283,112 @@ main.drama {
 
 /* rwd setting */
 @media screen and (max-width: 590px) {
-  body {
-    overflow: scroll;
-  }
   header {
     height: 20vh;
     justify-content: start;
   }
+
+  nav {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    height: 50px;
+    padding: 0 1rem;
+    position: relative;
+  }
+
+  nav h2 {
+    display: block;
+    color: #fff;
+    font-size: 1.25rem;
+  }
+
+  nav ul {
+    width: 100%;
+    padding-left: 0;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    z-index: 10;
+  }
+
   nav ul li {
     width: 100%;
+    height: 100%;
+    background: #222;
+    padding: 0;
   }
-  main {
+
+  nav ul li a {
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+
+  /* burger setting */
+  .burger-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    cursor: pointer;
+    position: relative;
+    width: 32px;
+    height: 100%;
+  }
+
+  .burger,
+  .burger::before,
+  .burger::after {
+    display: block;
+    background: #fff;
+    width: 32px;
+    height: 3px;
+    border-radius: 1.5px;
+    position: absolute;
+    right: 0;
+  }
+
+  .burger::before {
+    content: "";
+    margin-top: -8px;
+  }
+
+  .burger::after {
+    content: "";
+    margin-top: 8px;
+  }
+
+  #burger-toggler ~ ul li {
+    height: 0;
+    border: 0;
+    overflow: hidden;
+    transition: height 0.3s cubic-bezier(0.05, 0, 0.3, 1);
+  }
+
+  #burger-toggler:checked ~ ul li {
+    /* height: auto; */
+    height: 2.5em;
+    border: 1px solid #333d3d;
+    transition: height 0.3s cubic-bezier(0.05, 0, 0.3, 1);
+  }
+
+  #home {
+    /* fix scroll effect (works on edge and firefox) */
+    flex-direction: column;
+    overflow-y: scroll;
+  }
+
+  .section-outter {
     flex-direction: column-reverse;
     justify-content: start;
     align-items: center;
+    padding: 0.75rem 1rem;
   }
 
   #home section.left h3,
@@ -298,6 +403,7 @@ main.drama {
 
   #home section.right {
     max-width: 100vw;
+    text-align: center;
   }
 
   #home section.right iframe {
@@ -315,6 +421,21 @@ main.drama {
     width: 50vw;
     border-bottom: 5px solid rgba(0, 104, 107, 0.6);
     margin: 2rem 0;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .drama {
+    overflow-y: scroll;
+  }
+
+  .drama .cards ul {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .drama .cards .card {
+    margin: 1rem 0 2rem 0;
   }
 }
 
