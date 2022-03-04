@@ -150,6 +150,10 @@ main h2 {
 }
 
 /* homepage */
+#home {
+  display: flex;
+}
+
 .section-outter {
   display: flex;
 }
