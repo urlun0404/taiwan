@@ -327,7 +327,74 @@ main h2 {
   object-position: center;
 }
 
+.author-info {
+  display: flex;
+  align-items: baseline;
+  gap: 3rem;
+  padding: 0.75rem 2rem;
+}
+
+.author-info h3 {
+  font-size: 1.75rem;
+}
+
+.author-info ul {
+  padding: 0 1rem;
+  list-style-type: disc;
+  font-size: 1.25rem;
+}
+
+.author-info ul li {
+  margin-bottom: 1.5rem;
+}
+
+.author-info a {
+  color: #ffff00;
+}
+
+.author-info a:hover {
+  text-decoration: underline;
+}
+
+.icons {
+  display: flex;
+  gap: 2rem;
+}
+
+.icons img {
+  width: 3.5vw;
+  height: 3.5vw;
+  transition: all 0.25s ease;
+}
+
+.icons img:hover {
+  filter: brightness(1.5);
+}
+
+.icons img[alt="github"]:hover {
+  transform: scale(1.5) rotateZ(720deg);
+}
+
+.icons img[alt="twitter"]:hover {
+  transform: scale(1.5) translateY(-10px);
+}
+
+.icons img[alt="linkedin"]:hover {
+  transform: scale(1.5);
+}
+
+.icons img[alt="instagram"]:hover {
+  transform: scale(1.5) rotate(-90deg);
+}
+
 /* rwd setting */
+@media screen and (max-width: 800px) {
+  .icons img {
+    width: 4vw;
+    height: 4vw;
+  }
+}
+
 @media screen and (max-width: 590px) {
   header {
     height: 20vh;
@@ -492,6 +559,18 @@ main h2 {
   .drama .cards .card {
     margin: 1rem 0 2rem 0;
   }
+
+  .author-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 0.75rem 2rem;
+  }
+
+  .icons img {
+    width: 6vw;
+    height: 6vw;
+  }
 }
 
 @media screen and (max-width: 350px) {
@@ -500,5 +579,9 @@ main h2 {
   }
   .title h3 {
     font-size: 4.5vw;
+  }
+  .icons img {
+    width: 8vw;
+    height: 8vw;
   }
 }
