@@ -139,19 +139,31 @@ nav ul li .twicon-nav {
 main {
   width: 100%;
   height: 70vh;
-  padding: 1.75rem 1rem;
   color: rgba(255, 255, 255, 1);
 }
 
 main h2 {
+  margin-right: 0.5rem;
   font-size: 1.75rem;
   font-weight: bold;
-  margin-right: 0.5rem;
+}
+
+.main-title {
+  display: flex;
+  align-items: flex-end;
+  padding: 1rem 1.75rem;
+}
+
+.main-title h3 {
+  color: rgb(131, 131, 131);
+  font-size: 1rem;
+  font-weight: normal;
 }
 
 /* homepage */
 #home {
   display: flex;
+  padding: 1.75rem 1rem;
 }
 
 .section-outter {
@@ -216,19 +228,44 @@ main h2 {
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: 70vh;
-  overflow: hidden;
+  /* overflow-x: auto; */
+  /* -ms-overflow-style: none; */
+  /* scrollbar-width: none; */
+}
+/* 
+.drama::-webkit-scrollbar {
+  display: none;
+} */
+
+.cards {
+  position: relative;
 }
 
-.drama-title {
-  display: flex;
-  align-items: flex-end;
+.cards .arrow-button {
+  position: absolute;
+  z-index: 10;
+  width: 35px;
+  height: 100%;
+  overflow-x: hidden;
+  background-color: #2a2a2a;
+  border: 0;
+  font-size: 1.75rem;
+  color: #fff;
+  opacity: 0;
+  transition: opacity 0.4s ease-in-out;
+  cursor: pointer;
 }
 
-.drama-title h3 {
-  color: rgb(131, 131, 131);
-  font-size: 1rem;
-  font-weight: normal;
+.cards .arrow-button.left {
+  left: 0;
+}
+
+.cards .arrow-button.right {
+  right: 0;
+}
+
+.cards .arrow-button:hover {
+  opacity: 0.8;
 }
 
 .cards ul {
