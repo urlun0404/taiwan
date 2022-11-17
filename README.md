@@ -5,7 +5,7 @@ Using HTML and SCSS languages to make the website introducing Taiwan historic dr
 ## Built With
 
 - HTML
-- [SaSS/SCSS](https://sass-lang.com/ "SaSS official website") - A CSS preprocessor compatible with all versions of CSS on multiple engines
+- [SaSS/SCSS](https://sass-lang.com/ 'SaSS official website') - A CSS preprocessor compatible with all versions of CSS on multiple engines
 
 ## Features
 
@@ -17,11 +17,6 @@ Using HTML and SCSS languages to make the website introducing Taiwan historic dr
 
 [Live Demo on Netlify](https://taiwan-project-urlun0404.netlify.app)
 
-## To do:
-
-- Popup window for display the detailed information of each drama
-- Layout adjustment
-
 ## Author
 
-[You-Lun, Lin](https://urlun0404.netlify.app/index.html)
+[You-Lun, Lin](https://portfolio-next-jet.vercel.app/)
